@@ -11,12 +11,12 @@ const create = async (req,res) =>{
 }
 
 const remove = async (req, res) => {
-    const productId = req.params.id
-    const product = await service.getProductById(productId)
-    if (product == undefined){
+    const OrderedId = req.params.id
+    const ordered = await service.getProductById(OrderedId)
+    if (ordered == undefined){
         res.status(404).send('Ordered not found')
     }else{
-        await service.remove(productId)
+        await service.remove(OrderedId)
         res.status(204).send('')
     }
 }
