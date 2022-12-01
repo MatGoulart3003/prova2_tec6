@@ -12,11 +12,11 @@ const create = async (req,res) =>{
 
 const remove = async (req, res) => {
     const CustomerId = req.params.id
-    const customer = await service.getProductById(CustomerId)
+    const customer = await service.getCustomerById(CustomerId)
     if (customer == undefined){
         res.status(404).send('Customer not found')
     }else{
-        await service.remove(productId)
+        await service.remove(CustomerId)
         res.status(204).send('')
     }
 }

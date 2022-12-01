@@ -13,7 +13,16 @@ const remove = async productId => {
     
 }
 
+const getCustomerById = async customerId => {
+    return await customer.findAll({
+        where:{
+            id: customerId
+        }
+    })
+}
+
 module.exports = {
     create,
-    remove
+    remove,
+    getCustomerById
 }
