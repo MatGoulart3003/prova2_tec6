@@ -1,7 +1,7 @@
 const service = require('../service/product.service')
 
 const create = async (req,res) =>{
-   if (req.body.name == undefined || req.body.email == undefined){
+   if (req.body.name == undefined || req.body.value == undefined){
         res.status(400).send('Invalid data supplied')
    }else{
         await service.create(req.body)
